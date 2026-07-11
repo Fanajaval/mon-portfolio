@@ -12,34 +12,26 @@ function Hero() {
         <h2>
           Développeur Full Stack
         </h2>
-
         <p>
           Je développe des applications web modernes
           avec React, Node.js et les technologies du web.
         </p>
-
         <div className="hero-buttons">
           <button>
             Me contacter
           </button>
-
           <button>
             Mes projets
           </button>
         </div>
-
       </div>
 
-
       <div className="hero-image">
-
         <img 
           src="/profile.png"
           alt="Photo de profil"
         />
-
       </div>
-
 
     </section>
   );
