@@ -9,18 +9,36 @@
   text-align: center;
 }
 
-.hero h1 {
-  font-size: 3rem;
-}
-
-.hero h2 {
-  font-size: 1.8rem;
-}
-
-.hero p {
+.hero-greeting {
   font-size: 1.2rem;
+  margin-bottom: 15px;
 }
 
+.hero-title {
+  font-size: 3rem;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.hero-subtitle {
+  color: var(--primary-color);
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  max-width: 800px;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+/*photo de profil*/
 .profile-image {
   width: 320px;
   height: 320px;
