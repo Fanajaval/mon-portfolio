@@ -3,7 +3,7 @@ import "../styles/Navbar.css"
 function Navbar(){
     return(
         <header className="header">
-            <nav className="nav">
+            <nav className="navbar">
                 <div className="logo">FV</div>
 
                 <ul className="nav-links">

@@ -1,4 +1,5 @@
 import "../styles/Hero.css";
+import profile from "../assets/images/profile.png"
 
 function Hero() {
   return (
@@ -28,8 +29,9 @@ function Hero() {
 
       <div className="hero-image">
         <img 
-          src="/profile.png"
+          src={profile}
           alt="Photo de profil"
+          className="profile-image"
         />
       </div>
 
