@@ -3,6 +3,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 80px;
 }
 
 .hero-content {
@@ -28,7 +29,7 @@
 
 .hero-description {
   font-size: 1.1rem;
-  max-width: 800px;
+  max-width: 700px;
   line-height: 1.8;
   margin-bottom: 30px;
 }
@@ -36,6 +37,20 @@
 .hero-buttons {
   display: flex;
   gap: 20px;
+  justify-content: center;
+}
+
+.hero-buttons a {
+  text-decoration: none;
+  transition: transform 0.3s ease;
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: 7px;
+}
+
+.hero-buttons a:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
 }
 
 /*photo de profil*/
@@ -50,4 +65,36 @@
 
 .profile-image:hover {
   transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 20px;
+  }
+
+  .hero-content {
+    order: 2;
+  }
+
+  .hero-image {
+    order: 1;
+    margin-bottom: 30px;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .profile-image {
+    width: 240px;
+    height: 240px;
+  }
 }

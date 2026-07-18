@@ -20,7 +20,7 @@ function Hero() {
         </h2>
 
         <p className="hero-description">
-          Étudiant en troisième année en Génie Logiciel
+          Etudiant en troisième année en Génie Logiciel
           et Base de Données à l'ENI Fianarantsoa.
           Passionné par le développement d'applications
           web modernes et toujours motivé pour apprendre
