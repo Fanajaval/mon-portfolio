@@ -1,4 +1,5 @@
 import "../styles/Skills.css";
+import { skills } from "../data/skills";
 
 function Skills() {
   return (
@@ -8,32 +9,14 @@ function Skills() {
         Mes Compétences
       </h2>
 
+      <h3>Langages</h3>
+
       <div className="skills-grid">
-
-        <div className="skill-card">
-          <h3>Java</h3>
-        </div>
-
-        <div className="skill-card">
-          <h3>Python</h3>
-        </div>
-
-        <div className="skill-card">
-          <h3>JavaScript</h3>
-        </div>
-
-        <div className="skill-card">
-          <h3>PHP</h3>
-        </div>
-
-        <div className="skill-card">
-          <h3>React</h3>
-        </div>
-
-        <div className="skill-card">
-          <h3>Node.js</h3>
-        </div>
-
+        {skills.languages.map((language) => (
+          <div className="skill-card" key={language}>
+            <h4>{language}</h4>
+          </div>
+        ))}
       </div>
 
     </section>
