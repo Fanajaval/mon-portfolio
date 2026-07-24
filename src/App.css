@@ -182,3 +182,11 @@
     border-right-color: var(--border);
   }
 }
+
+.skill-icon{
+
+    font-size:60px;
+
+    color:#f89820;
+
+}
