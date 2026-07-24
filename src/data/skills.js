@@ -68,4 +68,95 @@ export const skills = {
 
   ],
 
+  frameworks: [
+    {
+      name: "React",
+      icon: FaReact,
+      color: "#61DAFB",
+    },
+    {
+      name: "Node.js",
+      icon: FaNodeJs,
+      color: "#5FA04E",
+    },
+    {
+      name: "Express.js",
+      icon: SiExpress,
+      color: "#000000",
+    },
+    {
+      name: "Flask",
+      icon: SiFlask,
+      color: "#000000",
+    },
+    {
+      name: "React Native",
+      icon: FaReact,
+      color: "#61DAFB",
+    },
+  ],
+
+  databases: [
+    {
+      name: "MySQL",
+      icon: SiMysql,
+      color: "#4479A1",
+    },
+    {
+      name: "SQLite",
+      icon: SiSqlite,
+      color: "#003B57",
+    },
+    {
+      name: "Firebase",
+      icon: SiFirebase,
+      color: "#FFCA28",
+    },
+  ],
+
+  tools: [
+    {
+      name: "Git",
+      icon: FaGitAlt,
+      color: "#F05032",
+    },
+    {
+      name: "GitHub",
+      icon: FaGithub,
+      color: "#181717",
+    },
+    {
+      name: "Postman",
+      icon: SiPostman,
+      color: "#FF6C37",
+    },
+  ],
+  learning: [
+    {
+      name: "Docker",
+      icon: FaDocker,
+      color: "#2496ED",
+    },
+    {
+      name: "TypeScript",
+      icon: SiTypescript,
+      color: "#3178C6",
+    },
+    {
+      name: "Next.js",
+      icon: SiNextdotjs,
+      color: "#000000",
+    },
+    {
+      name: "Spring Boot",
+      icon: SiSpring,
+      color: "#6DB33F",
+    },
+    {
+      name: "Hibernate",
+      icon: SiHibernate,
+      color: "#59666C",
+    },
+  ],
+
 };

@@ -1,5 +1,6 @@
 import "../styles/Skills.css";
 import { skills } from "../data/skills";
+import SkillCategory from "./SkillCategory";
 
 function Skills() {
   return (
@@ -9,32 +10,30 @@ function Skills() {
         Mes Compétences
       </h2>
 
-      <h3>Langages</h3>
+      <SkillCategory
+        title="Langages"
+        items={skills.languages}
+      />
 
-      <div className="skills-grid">
+      <SkillCategory
+        title="Frameworks"
+        items={skills.frameworks}
+      />
 
-        {skills.languages.map((skill) => {
+      <SkillCategory
+        title="Bases de données"
+        items={skills.databases}
+      />
 
-          const Icon = skill.icon;
+      <SkillCategory
+        title="Outils"
+        items={skills.tools}
+      />
 
-          return (
-
-            <div className="skill-card" key={skill.name}>
-
-              <Icon
-                className="skill-icon"
-                style={{ color: skill.color }}
-        />
-
-        <h4>{skill.name}</h4>
-
-      </div>
-
-    );
-
-  })}
-
-</div>
+      <SkillCategory
+        title="En apprentissage"
+        items={skills.learning}
+      />
 
     </section>
   );
