@@ -53,13 +53,17 @@ function Hero() {
         </p>
 
         <div className="hero-buttons">
-          <a href="#contact" className="btn-primary">
+          <motion.a href="#contact" className="btn-primary" 
+          whileTap={{ scale: 0.9 }} 
+          transition={{duration: 0.1}}>
             Me contacter
-          </a>
+          </motion.a>
 
-          <a href="/cv.pdf" className="btn-secondary" download>
+          <motion.a href="/cv.pdf" className="btn-secondary" download 
+          whileTap={{ scale: 0.9 }} 
+          transition={{duration: 0.1}}>
             Télécharger mon CV
-          </a>
+          </motion.a>
         </div>
       </div>
 
