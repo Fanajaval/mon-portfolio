@@ -1,19 +1,44 @@
 import "../styles/Hero.css";
 import profile from "../assets/images/profile.png"
+import {motion} from "framer-motion"
 
 function Hero() {
   return (
     <section className="hero">
       <div className="hero-content">
-        <p className="hero-greeting">
+        <motion.p className="hero-greeting" 
+        initial={{
+          opacity: 0,
+          x: -200
+        }}
+        animate= {{
+          opacity: 1,
+          x: 0
+        }}
+        transition={{
+          duration: 1
+        }}
+        >
           Bonjour, je suis
-        </p>
+        </motion.p>
 
-        <h1 className="hero-title">
+        <motion.h1 className="hero-title"
+        initial={{
+          opacity: 0,
+          x: -200
+        }}
+        animate= {{
+          opacity: 1,
+          x: 0
+        }}
+        transition={{
+          duration: 1
+        }}
+        >
           Fanajarilala Valério
           <br />
           ANDRIATOAVIMANANA
-        </h1>
+        </motion.h1>
 
         <h2 className="hero-subtitle">
           Développeur Full Stack Junior
