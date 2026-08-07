@@ -46,8 +46,7 @@ function SkillCategory({ title, items }) {
     <div className="skill-category">
 
       <h3>{title}</h3>
-
-
+      
       <motion.div
 
         className="skills-grid"
@@ -57,6 +56,8 @@ function SkillCategory({ title, items }) {
         initial="hidden"
 
         whileInView="visible"
+
+        viewport={{ once: true }}
 
       >
 

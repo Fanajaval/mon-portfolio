@@ -15,13 +15,82 @@ export const projects = [
 
     category: "Mobile",
 
+    github: "https://github.com/Fanajaval/gestion-salle-de-jeux.git",
+
+    demo: "#",
+
+    image: "/projects/G1.jpg"
+
+    },
+
+    {
+    title: "Application web de gestion de location de voitures",
+
+    description:
+      "Application web full-stack avec authentification JWT, gestion des véhicules, réservations et suivi des locations.",
+
+    technologies: [
+      "React",
+      "Vite",
+      "TailwindCSS",
+      "Flask",
+      "MySQL"
+    ],
+
+    category: "Web",
+
     github: "#",
 
     demo: "#",
 
-    image: "/projects/game-room.png"
+    image: "/projects/car-rental.png"
 
-  },
+    },
 
+    {
+    title: "Application mobile de billetterie sécurisée",
 
-];
+    description:
+      "Application mobile de gestion de billets avec authentification sécurisée et stockage cloud Firebase.",
+
+    technologies: [
+      "React Native",
+      "Expo",
+      "TypeScript",
+      "Firebase"
+    ],
+
+    category: "Mobile",
+
+    github: "#",
+
+    demo: "#",
+
+    image: "/projects/ticketing.png"
+
+    },
+
+    {
+    title: "Application bancaire sécurisée",
+
+    description:
+      "Application web bancaire avec authentification multi-rôles, génération de PDF et notifications par email.",
+
+    technologies: [
+      "PHP",
+      "MySQL",
+      "FPDF",
+      "PHPMailer"
+    ],
+
+    category: "Web",
+
+    github: "#",
+
+    demo: "#",
+
+    image: "/projects/banking.png"
+
+    },
+
+    ];
