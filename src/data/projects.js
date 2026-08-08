@@ -19,7 +19,7 @@ export const projects = [
 
     demo: "#",
 
-    image: "/projects/G1.jpg"
+    image: "/projects/game-money.jpg"
 
     },
 
@@ -62,11 +62,11 @@ export const projects = [
 
     category: "Mobile",
 
-    github: "#",
+    github: "https://github.com/Fanajaval/billetterie-app.git",
 
     demo: "#",
 
-    image: "/projects/ticketing.png"
+    image: "/projects/billeterie.jpg"
 
     },
 
@@ -85,11 +85,11 @@ export const projects = [
 
     category: "Web",
 
-    github: "#",
+    github: "https://github.com/Fanajaval/gestion-virement-remboursement-pret-bancaire.git",
 
     demo: "#",
 
-    image: "/projects/banking.png"
+    image: "/projects/bankonline.png"
 
     },
 

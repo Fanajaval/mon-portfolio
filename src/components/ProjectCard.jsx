@@ -1,15 +1,22 @@
 import { FaGithub } from "react-icons/fa6";
 import { FiExternalLink } from "react-icons/fi";
+import { motion } from "framer-motion";
 
 function ProjectCard({ project }) {
   return (
-    <div className="project-card">
+    <motion.div
+        className="project-card"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+        >
 
       <img
         src={project.image}
         alt={project.title}
-        className="project-image"
-      />
+        className={`project-image ${project.category === "Mobile" ? "mobile-image" : "web-image"}`}
+        />
 
       <div className="project-content">
 
@@ -50,8 +57,7 @@ function ProjectCard({ project }) {
         </div>
 
       </div>
-
-    </div>
+    </motion.div>  
   );
 }
 
