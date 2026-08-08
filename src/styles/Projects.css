@@ -42,16 +42,23 @@
 
 /* Projets mobiles */
 .mobile-image {
-  height: 260px;
+  display: block;
+
+  width: 200px;
+  height: 360px;
+
   object-fit: contain;
-  padding: 18px;
-  background: #f8fafc;
+
+  padding: 0;
+
+  background: #111827;
 
   border: 6px solid #111827;
-  border-radius: 28px;
+  border-radius: 30px;
 
-  width: 180px;
   margin: 20px auto;
+
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
 .project-content {
