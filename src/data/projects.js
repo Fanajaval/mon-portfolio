@@ -93,4 +93,24 @@ export const projects = [
 
     },
 
+    {
+      title: "Gestion de stock desktop",
+      description: "Application desktop de gestion de stock.",
+      technologies: ["Python", "Tkinter", "SQLite"],
+      category: "Desktop",
+      github: "#",
+      demo: "#",
+      image: "/projects/stock.png"
+    },
+
+    {
+      title: "Gestion d'émigration des étrangers",
+      description: "Application desktop de gestion d'émigration des étrangers.",
+      technologies: ["Python", "Tkinter", "SQLite"],
+      category: "Desktop",
+      github: "#",
+      demo: "#",
+      image: "/projects/stock.png"
+    }
+
     ];
