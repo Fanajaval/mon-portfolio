@@ -5,6 +5,7 @@ import Skills from "./components/Skills";
 import {FaJava} from  "react-icons/fa6";
 import Projects from "./components/Projects";
 import Education  from "./components/Education";
+import Certifications from "./components/Certifications";
 
 function App(){
   return (
@@ -16,6 +17,7 @@ function App(){
       <FaJava className="skill-icon" />
       <Projects/>
       <Education/>
+      <Certifications/>
     </>
   );
 }
