@@ -1,0 +1,68 @@
+.education {
+  padding: 80px 20px;
+  background: #f8fafc;
+}
+
+.education-list {
+  max-width: 900px;
+  margin: 40px auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.education-item {
+  background: white;
+  padding: 24px;
+  border-radius: 20px;
+  border: 1px solid rgba(0,0,0,0.05);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.education-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.12);
+}
+
+.education-item span {
+  display: inline-block;
+  background: #eef2ff;
+  color: #1e3a8a;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.education-item h3 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  color: #111827;
+}
+
+.education-item p {
+  color: #4b5563;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .education {
+    padding: 60px 16px;
+  }
+
+  .education-item {
+    padding: 20px;
+  }
+
+  .education-item h3 {
+    font-size: 1.05rem;
+  }
+
+  .education-item p {
+    font-size: 0.95rem;
+  }
+}
