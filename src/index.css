@@ -4,6 +4,16 @@
   box-sizing: border-box;
 }
 
+html {
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 :root {
   --primary-color: #7C3AED;
   --secondary-color: #06B6D4;
@@ -20,4 +30,6 @@ body {
   font-family: Arial, sans-serif;
   background-color: var(--background-color);
   color: var(--text-color);
+  overflow-x: hidden;
+  width: 100%;
 }

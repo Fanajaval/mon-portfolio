@@ -89,7 +89,7 @@
 
   grid-template-columns: repeat(
     auto-fit,
-    minmax(300px, 1fr)
+    minmax(min(100%, 280px), 1fr)
   );
 
   gap: 30px;
@@ -295,6 +295,8 @@
   line-height: 1.4;
 
   color: #111827;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .cert-content p {
