@@ -15,7 +15,6 @@ import {
 import {
   SiExpress,
   SiFlask,
-  SiReact,
   SiMysql,
   SiSqlite,
   SiFirebase,
