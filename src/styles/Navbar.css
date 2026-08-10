@@ -27,7 +27,7 @@
 .logo {
   font-size: 1.8rem;
   font-weight: 800;
-  color: #2563eb;
+  color: var(--primary-color);
   letter-spacing: 1px;
   cursor: pointer;
   transition: transform 0.3s ease;
@@ -46,14 +46,13 @@
 
 .nav-links a {
   position: relative;
-
   text-decoration: none;
   color: #1f2937;
   font-size: 1rem;
   font-weight: 600;
-
   transition: color 0.3s ease;
 }
+
 
 .nav-links a::after {
   content: "";
@@ -64,14 +63,18 @@
   width: 0%;
   height: 2px;
 
-  background: #2563eb;
+  background: linear-gradient(
+    90deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
   border-radius: 2px;
 
   transition: width 0.3s ease;
 }
 
 .nav-links a:hover {
-  color: #2563eb;
+  color: var(--primary-color);
 }
 
 .nav-links a:hover::after {
@@ -79,7 +82,7 @@
 }
 
 .nav-links a.active {
-  color: #2563eb;
+  color: var(--primary-color);
 }
 
 .nav-links a.active::after {
@@ -91,7 +94,7 @@
   background: transparent;
   border: none;
   font-size: 2rem;
-  color: #1f2937;
+  color: var(--primary-color);
   cursor: pointer;
   transition: transform 0.2s ease;
 }

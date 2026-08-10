@@ -5,10 +5,14 @@
 }
 
 :root {
-  --primary-color: #2563eb;
-  --background-color: #f9fafb;
-  --text-color: #1f2937;
-  --white: #ffffff;
+  --primary-color: #7C3AED;
+  --secondary-color: #06B6D4;
+  --accent-color: #A78BFA;
+
+  --dark-color: #0F172A;
+  --text-color: #475569;
+  --light-color: #F8FAFC;
+  --white: #FFFFFF;
 }
 
 /*styles generaux */
