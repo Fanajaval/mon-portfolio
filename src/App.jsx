@@ -16,7 +16,6 @@ function App(){
       <Hero />
       <About/>
       <Skills/>
-      <FaJava className="skill-icon" />
       <Projects/>
       <Education/>
       <Certifications/>
