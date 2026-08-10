@@ -1,76 +1,126 @@
 import "../styles/Hero.css";
-import profile from "../assets/images/profile.png"
-import {motion} from "framer-motion"
+import profile from "../assets/images/profile.png";
+import { motion } from "framer-motion";
 
 function Hero() {
+  const textAnimation = {
+    hidden: {
+      opacity: 0,
+      y: 25
+    },
+    visible: (delay) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.7,
+        delay: delay,
+        ease: "easeOut"
+      }
+    })
+  };
+
   return (
-    <section className="hero">
+    <section className="hero" id="hero">
+
       <div className="hero-content">
-        <motion.p className="hero-greeting" 
-        initial={{
-          opacity: 0,
-          x: -200
-        }}
-        animate= {{
-          opacity: 1,
-          x: 0
-        }}
-        transition={{
-          duration: 1
-        }}
+
+        {/* Bonjour */}
+        <motion.p
+          className="hero-greeting"
+          custom={0.15}
+          variants={textAnimation}
+          initial="hidden"
+          animate="visible"
         >
           Bonjour, je suis
         </motion.p>
 
         <motion.h1
           className="hero-title"
-          initial={{ opacity: 0, x: -200 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1 }}
+          custom={0.3}
+          variants={textAnimation}
+          initial="hidden"
+          animate="visible"
         >
           Fanajarilala Valério
           <br />
           <span>ANDRIATOAVIMANANA</span>
         </motion.h1>
 
-        <h2 className="hero-subtitle">
+        <motion.h2
+          className="hero-subtitle"
+          custom={0.5}
+          variants={textAnimation}
+          initial="hidden"
+          animate="visible"
+        >
           Développeur Full Stack Junior
-        </h2>
+        </motion.h2>
 
-        <p className="hero-description">
+        <motion.p
+          className="hero-description"
+          custom={0.7}
+          variants={textAnimation}
+          initial="hidden"
+          animate="visible"
+        >
           Etudiant en troisième année en Génie Logiciel
           et Base de Données à l'ENI Fianarantsoa.
           Passionné par le développement d'applications
           web modernes et toujours motivé pour apprendre
           de nouvelles technologies.
-        </p>
+        </motion.p>
 
-        <div className="hero-buttons">
-          <motion.a href="#contact" className="btn-primary" 
-          whileHover={{scale: 1.1}}
-          whileTap={{ scale: 0.9 }} 
-          transition={{duration: 0.1, type: "spring"}}>
+        <motion.div
+          className="hero-buttons"
+          custom={0.9}
+          variants={textAnimation}
+          initial="hidden"
+          animate="visible"
+        >
+
+          <motion.a
+            href="#contact"
+            className="btn-primary"
+            whileHover={{
+              scale: 1.05,
+              y: -3
+            }}
+            whileTap={{
+              scale: 0.97
+            }}
+          >
             Me contacter
           </motion.a>
 
-          <motion.a href="/cv.pdf" className="btn-secondary" download 
-            whileHover={{scale: 1.1}}
-            whileTap={{ scale: 0.9 }} 
-            transition={{type: "spring",
-            stiffness: 100,
-            damping: 10}}>
+
+          <motion.a
+            href="/cv.pdf"
+            className="btn-secondary"
+            download
+            whileHover={{
+              scale: 1.05,
+              y: -3
+            }}
+            whileTap={{
+              scale: 0.97
+            }}
+          >
             Télécharger mon CV
           </motion.a>
-        </div>
+
+        </motion.div>
+
       </div>
 
       <div className="hero-image">
-        <img 
+        <img
           src={profile}
           alt="Photo de profil"
           className="profile-image"
         />
       </div>
+
     </section>
   );
 }
