@@ -1,32 +1,66 @@
-function CertificationCard({ certification }) {
+import { motion } from "framer-motion";
 
+function CertificationCard({ certification }) {
   const Icon = certification.icon;
 
   return (
+    <motion.article
+      className="cert-card"
+      initial={{
+        opacity: 0,
+        y: 40,
+      }}
+      whileInView={{
+        opacity: 1,
+        y: 0,
+      }}
+      viewport={{
+        once: true,
+        amount: 0.2,
+      }}
+      transition={{
+        duration: 0.6,
+        ease: "easeOut",
+      }}
+      whileHover={{
+        y: -6,
+      }}
+    >
 
-    <div className="cert-card">
-
-      <div
-        className="cert-icon"
-        style={{ color: certification.color }}
-      >
-        <Icon />
+      {/* Image de l'attestation */}
+      <div className="cert-image-container">
+        <img
+          src={certification.image}
+          alt={`Attestation ${certification.title}`}
+          className="cert-image"
+        />
       </div>
 
-      <div className="cert-content">
+      {/* Informations */}
+      <div className="cert-info">
 
-        <span className="cert-period">
-          {certification.period}
-        </span>
+        <div
+          className="cert-icon"
+          style={{ color: certification.color }}
+        >
+          <Icon />
+        </div>
 
-        <h3>{certification.title}</h3>
+        <div className="cert-content">
 
-        <p>{certification.organization}</p>
+          <span className="cert-period">
+            {certification.period}
+          </span>
+
+          <h3>{certification.title}</h3>
+
+          <p>{certification.organization}</p>
+
+        </div>
 
       </div>
 
-    </div>
-
+    </motion.article>
   );
 }
 
