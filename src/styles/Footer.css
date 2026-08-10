@@ -64,6 +64,10 @@
   margin-bottom: 14px;
 
   color: #ffffff;
+
+  overflow-wrap: break-word;
+  word-break: normal;
+  line-height: 1.4;
 }
 
 .footer-content h3 span {

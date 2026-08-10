@@ -24,8 +24,8 @@
   margin: 0 auto;
 
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  gap: 20px;
 
   padding: 18px 32px;
 }
@@ -36,11 +36,14 @@
   color: var(--primary-color);
   letter-spacing: 1px;
   cursor: pointer;
-  transition: transform 0.3s ease;
+  text-decoration: none;
+  margin-right: auto;
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .logo:hover {
   transform: scale(1.05);
+  color: var(--primary-color);
 }
 
 .nav-links {
@@ -142,6 +145,12 @@
   display: flex;
   align-items: center;
   gap: 12px;
+}
+
+.theme-btn:focus-visible,
+.menu-btn:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
 }
 
 @media (max-width: 768px) {

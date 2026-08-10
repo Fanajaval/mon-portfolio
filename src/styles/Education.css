@@ -262,6 +262,30 @@
   line-height: 1.6;
 }
 
+[data-theme="dark"] .education {
+  background:
+    radial-gradient(
+      circle at 90% 25%,
+      rgba(6, 182, 212, 0.10),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 10% 75%,
+      rgba(124, 58, 237, 0.12),
+      transparent 30%
+    ),
+    var(--background-color);
+}
+
+[data-theme="dark"] .education-dot {
+  border-color: var(--background-color);
+}
+
+[data-theme="dark"] .education-card:hover {
+  box-shadow:
+    0 18px 40px rgba(0, 0, 0, 0.35);
+}
+
 @media (max-width: 768px) {
   .education {
     padding: 80px 25px;
