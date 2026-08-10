@@ -22,22 +22,15 @@ function Hero() {
           Bonjour, je suis
         </motion.p>
 
-        <motion.h1 className="hero-title"
-        initial={{
-          opacity: 0,
-          x: -200
-        }}
-        animate= {{
-          opacity: 1,
-          x: 0
-        }}
-        transition={{
-          duration: 1
-        }}
+        <motion.h1
+          className="hero-title"
+          initial={{ opacity: 0, x: -200 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1 }}
         >
           Fanajarilala Valério
           <br />
-          ANDRIATOAVIMANANA
+          <span>ANDRIATOAVIMANANA</span>
         </motion.h1>
 
         <h2 className="hero-subtitle">
@@ -61,11 +54,11 @@ function Hero() {
           </motion.a>
 
           <motion.a href="/cv.pdf" className="btn-secondary" download 
-          whileHover={{scale: 1.1}}
-          whileTap={{ scale: 0.9 }} 
-          transition={{type: "spring",
-  stiffness: 100,
-  damping: 10}}>
+            whileHover={{scale: 1.1}}
+            whileTap={{ scale: 0.9 }} 
+            transition={{type: "spring",
+            stiffness: 100,
+            damping: 10}}>
             Télécharger mon CV
           </motion.a>
         </div>

@@ -2,99 +2,186 @@
   min-height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 80px;
+  justify-content: space-between;
+  gap: 260px;
+
+  padding: 120px 8% 80px;
+  background: linear-gradient(135deg, #f8fafc 0%, #eef4ff 100%);
 }
 
 .hero-content {
-  text-align: center;
+  flex: 1;
+  max-width: 650px;
 }
 
 .hero-greeting {
-  font-size: 1.2rem;
-  margin-bottom: 15px;
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2563eb;
+
+  background: rgba(37, 99, 235, 0.1);
+  padding: 8px 18px;
+  border-radius: 999px;
+
+  margin-bottom: 20px;
 }
 
 .hero-title {
-  font-size: 3rem;
-  line-height: 1.1;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  line-height: 1.05;
+  font-weight: 800;
+
   margin-bottom: 20px;
+  color: #0f172a;
 }
 
+.hero-title span {
+  background: linear-gradient(90deg, #2563eb, #4f46e5);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+
 .hero-subtitle {
-  color: var(--primary-color);
-  font-size: 1.8rem;
-  margin-bottom: 20px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #2563eb;
+  margin-bottom: 24px;
 }
 
 .hero-description {
-  font-size: 1.1rem;
-  max-width: 700px;
-  line-height: 1.8;
-  margin-bottom: 30px;
+  font-size: 1.05rem;
+  color: #475569;
+  line-height: 1.9;
+  margin-bottom: 36px;
 }
 
 .hero-buttons {
   display: flex;
-  gap: 20px;
-  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
 }
 
 .hero-buttons a {
   text-decoration: none;
-  transition: transform 0.3s ease;
-  background-color: var(--primary-color);
-  color: var(--white);
-  padding: 7px;
+  font-weight: 600;
+  padding: 14px 28px;
+  border-radius: 14px;
+  transition: all 0.3s ease;
 }
 
-.hero-buttons a:hover {
-  transform: scale(1.05);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+.btn-primary {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: #ffffff;
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.25);
 }
 
-/*photo de profil*/
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 35px rgba(37, 99, 235, 0.35);
+}
+
+.btn-secondary {
+  border: 2px solid #2563eb;
+  color: #2563eb;
+  background: transparent;
+}
+
+.btn-secondary:hover {
+  background: #2563eb;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .profile-image {
-  width: 320px;
-  height: 320px;
+  width: 340px;
+  height: 340px;
   object-fit: cover;
   border-radius: 50%;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+
+  border: 6px solid rgba(255, 255, 255, 0.9);
+
+  box-shadow:
+    0 20px 50px rgba(15, 23, 42, 0.18),
+    0 0 0 18px rgba(37, 99, 235, 0.08);
+
+  animation: float 5s ease-in-out infinite;
   transition: transform 0.3s ease;
 }
 
 .profile-image:hover {
-  transform: scale(1.05);
+  transform: scale(1.04);
 }
 
-@media (max-width: 768px) {
+@keyframes float {
+  0%   { transform: translateY(0px); }
+  50%  { transform: translateY(-12px); }
+  100% { transform: translateY(0px); }
+}
 
+/*tablette */
+@media (max-width: 992px) {
   .hero {
-    flex-direction: column;
+    flex-direction: column-reverse;
     text-align: center;
-    padding: 40px 20px;
+    padding-top: 110px;
   }
 
   .hero-content {
-    order: 2;
-  }
-
-  .hero-image {
-    order: 1;
-    margin-bottom: 30px;
+    max-width: 100%;
   }
 
   .hero-buttons {
     justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  .hero-title {
-    font-size: 2.5rem;
   }
 
   .profile-image {
-    width: 240px;
-    height: 240px;
+    width: 280px;
+    height: 280px;
+  }
+}
+
+/*téléphone */
+@media (max-width: 576px) {
+  .hero {
+    gap: 40px;
+    padding: 100px 20px 60px;
+  }
+
+  .hero-title {
+    font-size: 2.3rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.15rem;
+  }
+
+  .hero-description {
+    font-size: 0.98rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-buttons a {
+    width: 100%;
+    text-align: center;
+  }
+
+  .profile-image {
+    width: 220px;
+    height: 220px;
   }
 }
