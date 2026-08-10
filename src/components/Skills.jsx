@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 function Skills() {
   return (
-    <section className="skills" id="skills">
+    <section id="skills" className="skills">
 
       <motion.div
         className="skills-heading"
@@ -36,7 +36,6 @@ function Skills() {
 
         <div className="skills-line"></div>
       </motion.div>
-
 
       <SkillCategory
         title="Langages"

@@ -7,13 +7,11 @@ const containerVariants = {
 
   visible: {
     opacity: 1,
-
     transition: {
       staggerChildren: 0.12
     }
   }
 };
-
 
 const itemVariants = {
   hidden: {
@@ -33,7 +31,6 @@ const itemVariants = {
     }
   }
 };
-
 
 function SkillCategory({ title, items }) {
 
