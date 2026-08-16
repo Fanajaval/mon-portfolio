@@ -135,8 +135,7 @@ function Projects() {
             Applications web
           </h3>
 
-          <div className="projects-grid">
-
+          <div className="projects-grid web-projects-grid">
             {webProjects.map((project) => (
               <ProjectCard
                 key={project.title}

@@ -520,6 +520,42 @@
   .mobile-projects-grid .project-links {
     margin-top: 8px;
   }
+
+  .web-projects-grid {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 20px;
+
+    padding: 10px 5px 20px;
+
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .web-projects-grid .project-card {
+    flex: 0 0 85%;
+    scroll-snap-align: start;
+  }
+
+  .web-projects-grid::-webkit-scrollbar {
+    height: 5px;
+  }
+
+  .web-projects-grid::-webkit-scrollbar-thumb {
+    background: linear-gradient(
+      90deg,
+      var(--primary-color),
+      var(--secondary-color)
+    );
+
+    border-radius: 10px;
+  }
+
+  .web-projects-grid::-webkit-scrollbar-track {
+    background: var(--surface-secondary);
+    border-radius: 10px;
+  }
 }
 
 @media (max-width: 576px) {
