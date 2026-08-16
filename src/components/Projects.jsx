@@ -20,7 +20,6 @@ function Projects() {
   return (
     <section className="projects" id="projects">
 
-      {/* En-tête */}
       <motion.div
         className="projects-heading"
         initial={{
@@ -90,7 +89,7 @@ function Projects() {
             Applications mobiles
           </h3>
 
-          <div className="projects-grid">
+          <div className="projects-grid mobile-projects-grid">
 
             {mobileProjects.map((project) => (
               <ProjectCard

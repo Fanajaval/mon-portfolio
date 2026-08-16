@@ -6,8 +6,6 @@ function About() {
     <section className="about" id="about">
 
       <div className="about-container">
-
-        {/* Titre */}
         <motion.div
           className="about-heading"
           initial={{
@@ -39,7 +37,6 @@ function About() {
         </motion.div>
 
 
-        {/* Carte */}
         <motion.div
           className="about-card"
           initial={{
