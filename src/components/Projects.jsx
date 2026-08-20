@@ -25,10 +25,28 @@ function Projects() {
 
   const handleScroll = (ref, setActiveIndex, totalItems) => {
     if (ref.current) {
-      const scrollLeft = ref.current.scrollLeft;
-      const itemWidth = ref.current.scrollWidth / totalItems;
-      const index = Math.round(scrollLeft / itemWidth);
-      setActiveIndex(index);
+      const container = ref.current;
+      const scrollLeft = container.scrollLeft;
+      const containerWidth = container.offsetWidth;
+      const scrollWidth = container.scrollWidth;
+      
+      let newIndex = 0;
+      const items = container.children;
+      
+      for (let i = 0; i < items.length; i++) {
+        const item = items[i];
+        const itemLeft = item.offsetLeft;
+        const itemWidth = item.offsetWidth;
+        const itemCenter = itemLeft + itemWidth / 2;
+        const viewCenter = scrollLeft + containerWidth / 2;
+        
+        if (Math.abs(itemCenter - viewCenter) < itemWidth / 2) {
+          newIndex = i;
+          break;
+        }
+      }
+      
+      setActiveIndex(newIndex);
     }
   };
 
@@ -148,11 +166,19 @@ function Projects() {
                   onClick={() => {
                     const container = mobileScrollRef.current;
                     if (container) {
-                      const itemWidth = container.scrollWidth / mobileProjects.length;
-                      container.scrollTo({
-                        left: itemWidth * index,
-                        behavior: 'smooth'
-                      });
+                      const item = container.children[index];
+                      if (item) {
+                        const containerWidth = container.offsetWidth;
+                        const itemLeft = item.offsetLeft;
+                        const itemWidth = item.offsetWidth;
+                        const scrollPosition = itemLeft - (containerWidth / 2) + (itemWidth / 2);
+                        
+                        container.scrollTo({
+                          left: scrollPosition,
+                          behavior: 'smooth'
+                        });
+                        setMobileActiveIndex(index);
+                      }
                     }
                   }}
                 />
@@ -214,11 +240,19 @@ function Projects() {
                   onClick={() => {
                     const container = webScrollRef.current;
                     if (container) {
-                      const itemWidth = container.scrollWidth / webProjects.length;
-                      container.scrollTo({
-                        left: itemWidth * index,
-                        behavior: 'smooth'
-                      });
+                      const item = container.children[index];
+                      if (item) {
+                        const containerWidth = container.offsetWidth;
+                        const itemLeft = item.offsetLeft;
+                        const itemWidth = item.offsetWidth;
+                        const scrollPosition = itemLeft - (containerWidth / 2) + (itemWidth / 2);
+                        
+                        container.scrollTo({
+                          left: scrollPosition,
+                          behavior: 'smooth'
+                        });
+                        setWebActiveIndex(index);
+                      }
                     }
                   }}
                 />
