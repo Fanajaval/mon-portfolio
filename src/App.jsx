@@ -12,27 +12,11 @@ import Footer from "./components/Footer";
 
 function App() {
 
-  // État du thème
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState(() => {
+    const savedTheme = localStorage.getItem("theme");
+    return savedTheme || "light";
+  });
 
-  // Chargement du thème sauvegardé
-  useEffect(() => {
-
-    const savedTheme =
-      localStorage.getItem("theme");
-
-    if (savedTheme) {
-      setTheme(savedTheme);
-      return;
-    }
-
-    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      setTheme("dark");
-    }
-
-  }, []);
-
-  // Application du thème sur la page
   useEffect(() => {
 
     document.documentElement.setAttribute(
@@ -44,7 +28,6 @@ function App() {
 
   }, [theme]);
 
-  // Fonction de bascule
   const toggleTheme = () => {
     setTheme(
       theme === "light" ? "dark" : "light"

@@ -27,7 +27,6 @@ function CertificationCard({ certification }) {
       }}
     >
 
-      {/* Image de l'attestation */}
       <div className="cert-image-container">
         <img
           src={certification.image}
