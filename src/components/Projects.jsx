@@ -20,10 +20,12 @@ function Projects() {
 
   const mobileScrollRef = useRef(null);
   const webScrollRef = useRef(null);
+  const desktopScrollRef = useRef(null);
   const [mobileActiveIndex, setMobileActiveIndex] = useState(0);
   const [webActiveIndex, setWebActiveIndex] = useState(0);
+  const [desktopActiveIndex, setDesktopActiveIndex] = useState(0);
 
-  const handleScroll = (ref, setActiveIndex, totalItems) => {
+  const handleScroll = (ref, setActiveIndex, totalItems, name) => {
     if (ref.current) {
       const container = ref.current;
       const scrollLeft = container.scrollLeft;
@@ -53,15 +55,20 @@ function Projects() {
   useEffect(() => {
     const mobileRef = mobileScrollRef.current;
     const webRef = webScrollRef.current;
+    const desktopRef = desktopScrollRef.current;
 
-    const handleMobileScroll = () => handleScroll(mobileScrollRef, setMobileActiveIndex, mobileProjects.length);
-    const handleWebScroll = () => handleScroll(webScrollRef, setWebActiveIndex, webProjects.length);
+    const handleMobileScroll = () => handleScroll(mobileScrollRef, setMobileActiveIndex, mobileProjects.length, 'mobile');
+    const handleWebScroll = () => handleScroll(webScrollRef, setWebActiveIndex, webProjects.length, 'web');
+    const handleDesktopScroll = () => handleScroll(desktopScrollRef, setDesktopActiveIndex, desktopProjects.length, 'desktop');
 
     if (mobileRef) {
       mobileRef.addEventListener('scroll', handleMobileScroll);
     }
     if (webRef) {
       webRef.addEventListener('scroll', handleWebScroll);
+    }
+    if (desktopRef) {
+      desktopRef.addEventListener('scroll', handleDesktopScroll);
     }
 
     return () => {
@@ -71,8 +78,11 @@ function Projects() {
       if (webRef) {
         webRef.removeEventListener('scroll', handleWebScroll);
       }
+      if (desktopRef) {
+        desktopRef.removeEventListener('scroll', handleDesktopScroll);
+      }
     };
-  }, [mobileProjects.length, webProjects.length]);
+  }, [mobileProjects.length, webProjects.length, desktopProjects.length]);
 
   return (
     <section className="projects" id="projects">
@@ -295,7 +305,7 @@ function Projects() {
             Applications desktop
           </h3>
 
-          <div className="projects-grid">
+          <div className="projects-grid desktop-projects-grid" ref={desktopScrollRef}>
 
             {desktopProjects.map((project) => (
               <ProjectCard
@@ -305,6 +315,35 @@ function Projects() {
             ))}
 
           </div>
+
+          {desktopProjects.length > 1 && (
+            <div className="carousel-indicators">
+              {desktopProjects.map((_, index) => (
+                <span
+                  key={index}
+                  className={`indicator ${index === desktopActiveIndex ? 'active' : ''}`}
+                  onClick={() => {
+                    const container = desktopScrollRef.current;
+                    if (container) {
+                      const item = container.children[index];
+                      if (item) {
+                        const containerWidth = container.offsetWidth;
+                        const itemLeft = item.offsetLeft;
+                        const itemWidth = item.offsetWidth;
+                        const scrollPosition = itemLeft - (containerWidth / 2) + (itemWidth / 2);
+                        
+                        container.scrollTo({
+                          left: scrollPosition,
+                          behavior: 'smooth'
+                        });
+                        setDesktopActiveIndex(index);
+                      }
+                    }
+                  }}
+                />
+              ))}
+            </div>
+          )}
 
         </motion.div>
       )}
