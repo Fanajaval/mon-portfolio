@@ -84,17 +84,7 @@ function ProjectCard({ project }) {
             className="project-btn github-btn"
           >
             <FaGithub />
-            GitHub
-          </a>
-
-          <a
-            href={project.demo}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="project-btn demo-btn"
-          >
-            <FiExternalLink />
-            Démo
+            Voir sur GitHub
           </a>
 
         </div>
