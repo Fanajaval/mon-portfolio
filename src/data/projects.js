@@ -72,6 +72,31 @@ export const projects = [
     },
 
     {
+    title: "ContinUp - Assistant de développement personnel",
+
+    description:
+      "Application full-stack qui transforme les rêves et objectifs en progression concrète avec analyse IA, suivi visuel et signaux de motivation.",
+
+    technologies: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Node.js",
+      "Express",
+      "PostgreSQL"
+    ],
+
+    category: "Web",
+
+    github: "https://github.com/Fanajaval/ContinUp-App.git",
+
+    demo: "#",
+
+    image: "/projects/ContinUp.png"
+
+    },
+
+    {
     title: "Application mobile de billetterie sécurisée",
 
     description:
