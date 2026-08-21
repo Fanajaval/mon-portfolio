@@ -1,7 +1,7 @@
 import { FaTrophy } from "react-icons/fa6";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
-import devhuntImage from "../assets/images/certifications/devhunt.png";
+import devhuntImage from "../assets/images/certifications/devhunt.webp";
 
 function DistinctionCard() {
   const [showModal, setShowModal] = useState(false);
