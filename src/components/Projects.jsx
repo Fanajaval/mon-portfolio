@@ -3,6 +3,7 @@ import { projects } from "../data/projects";
 import ProjectCard from "./ProjectCard";
 import "../styles/Projects.css";
 import { useRef, useState, useEffect } from "react";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
 
 function Projects() {
 
@@ -30,7 +31,6 @@ function Projects() {
       const container = ref.current;
       const scrollLeft = container.scrollLeft;
       const containerWidth = container.offsetWidth;
-      const scrollWidth = container.scrollWidth;
       
       let newIndex = 0;
       const items = container.children;
@@ -48,6 +48,33 @@ function Projects() {
         }
       }
       
+      setActiveIndex(newIndex);
+    }
+  };
+
+  const navigateCarousel = (ref, direction, currentIndex, setActiveIndex, totalItems) => {
+    if (!ref.current) return;
+    
+    const container = ref.current;
+    let newIndex = currentIndex;
+    
+    if (direction === 'next' && currentIndex < totalItems - 1) {
+      newIndex = currentIndex + 1;
+    } else if (direction === 'prev' && currentIndex > 0) {
+      newIndex = currentIndex - 1;
+    }
+    
+    const item = container.children[newIndex];
+    if (item) {
+      const containerWidth = container.offsetWidth;
+      const itemLeft = item.offsetLeft;
+      const itemWidth = item.offsetWidth;
+      const scrollPosition = itemLeft - (containerWidth / 2) + (itemWidth / 2);
+      
+      container.scrollTo({
+        left: scrollPosition,
+        behavior: 'smooth'
+      });
       setActiveIndex(newIndex);
     }
   };
@@ -156,6 +183,22 @@ function Projects() {
             Applications mobiles
           </h3>
 
+          <button
+            className={`carousel-nav-button carousel-nav-prev ${mobileActiveIndex > 0 ? 'visible' : ''}`}
+            onClick={() => navigateCarousel(mobileScrollRef, 'prev', mobileActiveIndex, setMobileActiveIndex, mobileProjects.length)}
+            aria-label="Projet précédent"
+          >
+            <FaChevronLeft />
+          </button>
+
+          <button
+            className={`carousel-nav-button carousel-nav-next ${mobileActiveIndex < mobileProjects.length - 1 ? 'visible' : ''}`}
+            onClick={() => navigateCarousel(mobileScrollRef, 'next', mobileActiveIndex, setMobileActiveIndex, mobileProjects.length)}
+            aria-label="Projet suivant"
+          >
+            <FaChevronRight />
+          </button>
+
           <div className="projects-grid mobile-projects-grid" ref={mobileScrollRef}>
 
             {mobileProjects.map((project) => (
@@ -231,6 +274,22 @@ function Projects() {
             Applications web
           </h3>
 
+          <button
+            className={`carousel-nav-button carousel-nav-prev ${webActiveIndex > 0 ? 'visible' : ''}`}
+            onClick={() => navigateCarousel(webScrollRef, 'prev', webActiveIndex, setWebActiveIndex, webProjects.length)}
+            aria-label="Projet précédent"
+          >
+            <FaChevronLeft />
+          </button>
+
+          <button
+            className={`carousel-nav-button carousel-nav-next ${webActiveIndex < webProjects.length - 1 ? 'visible' : ''}`}
+            onClick={() => navigateCarousel(webScrollRef, 'next', webActiveIndex, setWebActiveIndex, webProjects.length)}
+            aria-label="Projet suivant"
+          >
+            <FaChevronRight />
+          </button>
+
           <div className="projects-grid web-projects-grid" ref={webScrollRef}>
             {webProjects.map((project) => (
               <ProjectCard
@@ -304,6 +363,22 @@ function Projects() {
             <span className="category-dot"></span>
             Applications desktop
           </h3>
+
+          <button
+            className={`carousel-nav-button carousel-nav-prev ${desktopActiveIndex > 0 ? 'visible' : ''}`}
+            onClick={() => navigateCarousel(desktopScrollRef, 'prev', desktopActiveIndex, setDesktopActiveIndex, desktopProjects.length)}
+            aria-label="Projet précédent"
+          >
+            <FaChevronLeft />
+          </button>
+
+          <button
+            className={`carousel-nav-button carousel-nav-next ${desktopActiveIndex < desktopProjects.length - 1 ? 'visible' : ''}`}
+            onClick={() => navigateCarousel(desktopScrollRef, 'next', desktopActiveIndex, setDesktopActiveIndex, desktopProjects.length)}
+            aria-label="Projet suivant"
+          >
+            <FaChevronRight />
+          </button>
 
           <div className="projects-grid desktop-projects-grid" ref={desktopScrollRef}>
 
