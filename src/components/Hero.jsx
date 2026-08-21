@@ -1,5 +1,5 @@
 import "../styles/Hero.css";
-import profile from "../assets/images/profile.png";
+import profile from "../assets/images/profile.jpg";
 import { motion } from "framer-motion";
 
 function Hero() {
