@@ -1,5 +1,6 @@
 import { certifications } from "../data/certifications";
 import CertificationCard from "./CertificationCard";
+import DistinctionCard from "./DistinctionCard";
 import "../styles/Certifications.css";
 import { motion } from "framer-motion";
 import { useRef, useState, useEffect, useCallback } from "react";
@@ -168,6 +169,22 @@ function Certifications() {
           </div>
         )}
       </div>
+
+      <motion.div
+        className="distinction-separator"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+      >
+        <h3>
+          <span></span>
+          Distinction
+          <span></span>
+        </h3>
+      </motion.div>
+
+      <DistinctionCard />
 
     </section>
   );
