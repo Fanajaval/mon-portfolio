@@ -54,7 +54,7 @@ function Hero() {
           initial="hidden"
           animate="visible"
         >
-          Développeur Full Stack Junior
+          Développeur Full-Stack & Mobile
         </motion.h2>
 
         <motion.p

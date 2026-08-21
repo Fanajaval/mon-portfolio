@@ -26,6 +26,8 @@ import {
   SiHibernate,
 } from "react-icons/si";
 
+import { TbBolt } from "react-icons/tb";
+
 export const skills = {
 
   languages: [
@@ -133,6 +135,11 @@ export const skills = {
     {
       name: "Postman",
       icon: SiPostman,
+      color: "#FF6C37",
+    },
+    {
+      name: "Thunder Client",
+      icon: TbBolt,
       color: "#FF6C37",
     },
   ],
