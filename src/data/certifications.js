@@ -1,8 +1,8 @@
 import { FaGitAlt, FaDocker, FaJava } from "react-icons/fa6";
 
-import docker from "../assets/images/certifications/DEVOPS.png";
-import git from "../assets/images/certifications/GITHUB.png";
-import jee from "../assets/images/certifications/JEE.jpg";
+import docker from "../assets/images/certifications/DEVOPS.webp";
+import git from "../assets/images/certifications/GITHUB.webp";
+import jee from "../assets/images/certifications/JEE.webp";
 
 export const certifications = [
   {
