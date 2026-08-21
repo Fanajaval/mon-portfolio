@@ -67,7 +67,7 @@ export const projects = [
 
     demo: "#",
 
-    image: "/projects/car-rental.png"
+    image: "/projects/car-rental.jpg"
 
     },
 
@@ -92,7 +92,7 @@ export const projects = [
 
     demo: "#",
 
-    image: "/projects/ContinUp.png"
+    image: "/projects/ContinUp.jpg"
 
     },
 
@@ -138,7 +138,7 @@ export const projects = [
 
     demo: "#",
 
-    image: "/projects/bankonline.png"
+    image: "/projects/bankonline.jpg"
 
     },
 
@@ -149,7 +149,7 @@ export const projects = [
       category: "Desktop",
       github: "private",
       demo: "#",
-      image: "/projects/stock_vente.png"
+      image: "/projects/stock_vente.jpg"
     },
 
     {
@@ -159,7 +159,7 @@ export const projects = [
       category: "Desktop",
       github: "private",
       demo: "#",
-      image: "/projects/emigration.png"
+      image: "/projects/emigration.jpg"
     }
 
     ];
