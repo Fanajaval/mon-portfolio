@@ -6,6 +6,15 @@ import jee from "../assets/images/certifications/JEE.jpg";
 
 export const certifications = [
   {
+    title: "JEE / JSP",
+    period: "16 - 20 Février 2026",
+    organization: "Orange Digital Center Madagascar",
+    icon: FaJava,
+    color: "#ED8B00",
+    image: jee,
+  },
+
+  {
     title: "Docker Basics",
     period: "03 – 06 Mars 2026",
     organization: "Orange Digital Center Madagascar",
@@ -23,12 +32,4 @@ export const certifications = [
     image: git,
   },
 
-  {
-    title: "JEE / JSP",
-    period: "2026",
-    organization: "Orange Digital Center Madagascar",
-    icon: FaJava,
-    color: "#ED8B00",
-    image: jee,
-  },
 ];
