@@ -1,4 +1,4 @@
-import { FaGithub } from "react-icons/fa6";
+import { FaGithub, FaLock } from "react-icons/fa6";
 import { FiExternalLink } from "react-icons/fi";
 import { motion } from "framer-motion";
 
@@ -77,15 +77,22 @@ function ProjectCard({ project }) {
 
         <div className="project-links">
 
-          <a
-            href={project.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="project-btn github-btn"
-          >
-            <FaGithub />
-            Voir sur GitHub
-          </a>
+          {project.github && project.github !== "#" && project.github !== "private" ? (
+            <a
+              href={project.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="project-btn github-btn"
+            >
+              <FaGithub />
+              Voir sur GitHub
+            </a>
+          ) : (
+            <div className="project-btn private-badge">
+              <FaLock />
+              Projet privé
+            </div>
+          )}
 
         </div>
 

@@ -24,6 +24,30 @@ export const projects = [
     },
 
     {
+    title: "MadaGuide - Guide touristique de Madagascar",
+
+    description:
+      "Application mobile pour découvrir Madagascar, explorer les points d’intérêt et gérer ses favoris.",
+
+    technologies: [
+      "Flutter",
+      "Dart",
+      "Firebase",
+      "Firestore",
+      "Flutter Map"
+    ],
+
+    category: "Mobile",
+
+    github: "https://github.com/Fanajaval/MadaGuide.git",
+
+    demo: "#",
+
+    image: "/projects/MadaGuide.jpg"
+
+    },
+
+    {
     title: "Application web de gestion de location de voitures",
 
     description:
@@ -94,23 +118,23 @@ export const projects = [
     },
 
     {
-      title: "Gestion de stock desktop",
-      description: "Application desktop de gestion de stock.",
+      title: "Gestion de stock et vente",
+      description: "Application desktop de gestion de stock et suivi des ventes avec génération de rapports.",
       technologies: ["Python", "Tkinter", "SQLite"],
       category: "Desktop",
-      github: "#",
+      github: "private",
       demo: "#",
-      image: "/projects/stock.png"
+      image: "/projects/stock_vente.png"
     },
 
     {
       title: "Gestion d'émigration des étrangers",
-      description: "Application desktop de gestion d'émigration des étrangers.",
+      description: "Application desktop de gestion administrative de l'émigration et suivi des dossiers.",
       technologies: ["Python", "Tkinter", "SQLite"],
       category: "Desktop",
-      github: "#",
+      github: "private",
       demo: "#",
-      image: "/projects/stock.png"
+      image: "/projects/emigration.png"
     }
 
     ];
