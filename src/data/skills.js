@@ -17,6 +17,7 @@ import {
   SiFlask,
   SiMysql,
   SiSqlite,
+  SiPostgresql,
   SiFirebase,
   SiPostman,
   SiTypescript,
@@ -110,6 +111,11 @@ export const skills = {
       name: "Firebase",
       icon: SiFirebase,
       color: "#FFCA28",
+    },
+    {
+      name: "PostgreSQL",
+      icon: SiPostgresql,
+      color: "#4169E1",
     },
   ],
 
