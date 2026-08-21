@@ -1,30 +1,19 @@
 import "../styles/Education.css";
 import { motion } from "framer-motion";
-
-const educationData = [
-  {
-    year: "2025–2026",
-    title: "L3 Génie Logiciel et Base de Données",
-    school: "ENI Fianarantsoa"
-  },
-  {
-    year: "2023–2025",
-    title: "L1–L2 Génie Logiciel et Base de Données",
-    school: "ENI Fianarantsoa"
-  },
-  {
-    year: "2022–2023",
-    title: "L1 Mathématiques et Informatique",
-    school: "Université d’Antananarivo"
-  }
-];
-
+import { parcoursData } from "../data/parcours";
+import { useState } from "react";
+import { FaGraduationCap, FaBriefcase, FaChevronDown, FaChevronUp } from "react-icons/fa6";
 
 function Education() {
-  return (
-    <section className="education" id="education">
+  const [expandedIndex, setExpandedIndex] = useState(null);
 
-      {/* En-tête */}
+  const toggleDetails = (index) => {
+    setExpandedIndex(expandedIndex === index ? null : index);
+  };
+
+  return (
+    <section className="education" id="parcours">
+
       <motion.div
         className="education-heading"
 
@@ -54,30 +43,29 @@ function Education() {
         </span>
 
         <h2 className="section-title">
-          Ma <span>formation</span>
+          Mon <span>parcours</span>
         </h2>
 
         <div className="education-line"></div>
 
         <p className="education-intro">
-          Mon parcours académique en informatique et
+          Mon parcours académique et professionnel en informatique et
           développement logiciel.
         </p>
 
       </motion.div>
 
 
-      {/* Timeline */}
       <div className="education-timeline">
 
-        {educationData.map((education, index) => (
+        {parcoursData.map((item, index) => (
 
           <motion.div
             className={`education-item ${
               index % 2 === 0 ? "left" : "right"
-            }`}
+            } ${item.type}`}
 
-            key={education.year}
+            key={`${item.type}-${index}`}
 
             initial={{
               opacity: 0,
@@ -105,17 +93,77 @@ function Education() {
 
             <div className="education-card">
 
-              <span className="education-year">
-                {education.year}
-              </span>
+              <div className="parcours-header">
+                <div className={`parcours-label ${item.type}`}>
+                  {item.type === "formation" ? (
+                    <>
+                      <FaGraduationCap className="parcours-icon" />
+                      <span>FORMATION</span>
+                    </>
+                  ) : (
+                    <>
+                      <FaBriefcase className="parcours-icon" />
+                      <span>EXPÉRIENCE</span>
+                    </>
+                  )}
+                </div>
+
+                <span className="education-year">
+                  {item.year}
+                </span>
+              </div>
 
               <h3>
-                {education.title}
+                {item.title} — {item.organization}
               </h3>
 
-              <p>
-                {education.school}
-              </p>
+              {item.projects && (
+                <div className="parcours-projects-list">
+                  {item.projects.map((project, idx) => (
+                    <p key={idx} className="parcours-project-item">
+                      {project}
+                    </p>
+                  ))}
+                </div>
+              )}
+
+              {item.details && (
+                <>
+                  <button 
+                    className="parcours-details-btn"
+                    onClick={() => toggleDetails(index)}
+                  >
+                    {expandedIndex === index ? (
+                      <>
+                        Masquer les détails
+                        <FaChevronUp />
+                      </>
+                    ) : (
+                      <>
+                        Voir les détails
+                        <FaChevronDown />
+                      </>
+                    )}
+                  </button>
+
+                  {expandedIndex === index && (
+                    <motion.div
+                      className="parcours-details"
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: "auto" }}
+                      exit={{ opacity: 0, height: 0 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      {item.details.map((detail, idx) => (
+                        <div key={idx} className="detail-block">
+                          <h4>{detail.title}</h4>
+                          <p>{detail.description}</p>
+                        </div>
+                      ))}
+                    </motion.div>
+                  )}
+                </>
+              )}
 
             </div>
 

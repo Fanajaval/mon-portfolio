@@ -133,7 +133,11 @@
 
   width: 50%;
 
-  margin-bottom: 55px;
+  margin-bottom: 100px;
+}
+
+.education-item.experience {
+  margin-bottom: 120px;
 }
 
 .education-item.left {
@@ -183,7 +187,7 @@
 }
 
 .education-card {
-  padding: 25px;
+  padding: 30px;
 
   background: color-mix(
     in srgb,
@@ -208,6 +212,10 @@
     background-color 0.3s ease;
 }
 
+.education-item.experience .education-card {
+  padding: 32px;
+}
+
 .education-card:hover {
   transform: translateY(-5px);
 
@@ -217,12 +225,19 @@
     0 18px 40px rgba(124, 58, 237, 0.15);
 }
 
+.parcours-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+
+  margin-bottom: 16px;
+}
+
 .education-year {
   display: inline-block;
 
-  padding: 6px 13px;
-
-  margin-bottom: 13px;
+  padding: 7px 14px;
 
   border-radius: 999px;
 
@@ -238,7 +253,7 @@
 }
 
 .education-card h3 {
-  margin: 0 0 8px;
+  margin: 0 0 16px;
 
   font-size: 1.15rem;
 
@@ -260,6 +275,139 @@
   font-size: 0.95rem;
 
   line-height: 1.6;
+}
+
+.parcours-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+
+  padding: 7px 15px;
+
+  border-radius: 6px;
+
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+
+  transition: all 0.3s ease;
+}
+
+.parcours-label.formation {
+  color: var(--primary-color);
+  background: rgba(124, 58, 237, 0.08);
+  border: 1px solid rgba(124, 58, 237, 0.15);
+}
+
+.parcours-label.experience {
+  color: var(--secondary-color);
+  background: rgba(6, 182, 212, 0.08);
+  border: 1px solid rgba(6, 182, 212, 0.15);
+}
+
+.parcours-icon {
+  font-size: 0.9rem;
+}
+
+.parcours-projects-list {
+  margin: 0 0 4px;
+}
+
+.parcours-project-item {
+  margin: 0 0 10px !important;
+  
+  padding: 0 !important;
+  
+  font-size: 0.92rem !important;
+  font-weight: 500 !important;
+  
+  color: var(--text-secondary) !important;
+  
+  line-height: 1.6 !important;
+}
+
+.parcours-project-item:last-child {
+  margin-bottom: 0 !important;
+}
+
+.parcours-details-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  margin-top: 16px;
+
+  padding: 10px 18px;
+
+  border: none;
+  border-radius: 10px;
+
+  font-size: 0.85rem;
+  font-weight: 600;
+
+  color: var(--surface-color);
+
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.2);
+}
+
+.parcours-details-btn:hover {
+  transform: translateY(-2px);
+  
+  box-shadow: 0 6px 20px rgba(124, 58, 237, 0.3);
+}
+
+.parcours-details-btn:active {
+  transform: translateY(0);
+}
+
+.parcours-details {
+  margin-top: 20px;
+  
+  padding: 24px;
+  
+  border-radius: 12px;
+  
+  background: rgba(124, 58, 237, 0.04);
+  
+  border: 1px solid rgba(124, 58, 237, 0.1);
+  
+  overflow: hidden;
+}
+
+.detail-block {
+  margin-bottom: 22px;
+}
+
+.detail-block:last-child {
+  margin-bottom: 0;
+}
+
+.detail-block h4 {
+  margin: 0 0 10px;
+  
+  font-size: 0.92rem;
+  font-weight: 700;
+  
+  color: var(--text-color);
+}
+
+.detail-block p {
+  margin: 0;
+  
+  color: var(--text-secondary);
+  
+  font-size: 0.88rem;
+  line-height: 1.7;
 }
 
 [data-theme="dark"] .education {
@@ -305,11 +453,16 @@
     width: 100%;
 
     margin-left: 0;
+    margin-bottom: 70px;
 
     padding-left: 55px;
     padding-right: 0;
 
     text-align: left;
+  }
+
+  .education-item.experience {
+    margin-bottom: 85px;
   }
 
   .education-item.left .education-dot,
@@ -319,7 +472,15 @@
   }
 
   .education-card {
-    padding: 22px;
+    padding: 26px;
+  }
+
+  .education-item.experience .education-card {
+    padding: 28px;
+  }
+
+  .parcours-header {
+    gap: 10px;
   }
 }
 
@@ -344,6 +505,11 @@
   .education-item.left,
   .education-item.right {
     padding-left: 42px;
+    margin-bottom: 60px;
+  }
+
+  .education-item.experience {
+    margin-bottom: 70px;
   }
 
   .education-item.left .education-dot,
@@ -352,16 +518,38 @@
   }
 
   .education-card {
-    padding: 19px;
+    padding: 22px;
 
     border-radius: 17px;
   }
 
+  .education-item.experience .education-card {
+    padding: 24px;
+  }
+
   .education-card h3 {
-    font-size: 1rem;
+    font-size: 1.05rem;
   }
 
   .education-card p {
     font-size: 0.9rem;
+  }
+
+  .parcours-header {
+    gap: 8px;
+  }
+
+  .parcours-label {
+    padding: 6px 12px;
+    font-size: 0.68rem;
+  }
+
+  .education-year {
+    padding: 6px 12px;
+    font-size: 0.75rem;
+  }
+
+  .parcours-project-item {
+    font-size: 0.88rem !important;
   }
 }

@@ -12,7 +12,7 @@ const navItems = [
   { id: "about", label: "À propos" },
   { id: "skills", label: "Compétences" },
   { id: "projects", label: "Projets" },
-  { id: "education", label: "Formation" },
+  { id: "parcours", label: "Parcours" },
   { id: "certifications", label: "Certifications" },
   { id: "contact", label: "Contact" },
 ];
