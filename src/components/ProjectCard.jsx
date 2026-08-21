@@ -43,6 +43,8 @@ function ProjectCard({ project }) {
           className={`project-image ${
             project.category === "Mobile"
               ? "mobile-image"
+              : project.category === "Desktop"
+              ? "desktop-image"
               : "web-image"
           }`}
         />

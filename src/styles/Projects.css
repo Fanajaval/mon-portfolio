@@ -214,6 +214,18 @@
   transform: scale(1.04);
 }
 
+.desktop-image {
+  height: 230px;
+
+  object-fit: cover;
+
+  transition: transform 0.5s ease;
+}
+
+.project-card:hover .desktop-image {
+  transform: scale(1.04);
+}
+
 .mobile-image {
   display: block;
 
@@ -235,6 +247,10 @@
 
   box-shadow:
     0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.project-card:hover .mobile-image {
+  transform: scale(1.04);
 }
 
 .project-category-badge {
@@ -781,7 +797,17 @@
   }
 
   .web-image {
-    height: 200px;
+    height: 210px;
+  }
+
+  .desktop-image {
+    height: 210px;
+  }
+
+  .mobile-image {
+    width: min(140px, 32vw);
+    max-height: 200px;
+    margin: 10px auto;
   }
 
   .mobile-image {
