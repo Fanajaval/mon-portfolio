@@ -102,6 +102,19 @@
   align-items: stretch;
 }
 
+.certifications-container {
+  position: relative;
+  width: 100%;
+}
+
+.carousel-indicators {
+  display: none;
+}
+
+.carousel-nav-button {
+  display: none;
+}
+
 .cert-card {
   position: relative;
 
@@ -378,9 +391,30 @@
   }
 
   .certifications-grid {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 18px;
+    padding: 15px 8px 25px;
+    scroll-snap-type: x mandatory;
+    scroll-padding-left: 5%;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    grid-template-columns: none;
+  }
 
-    gap: 22px;
+  .certifications-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .certifications-grid .cert-card {
+    flex: 0 0 88%;
+    min-width: 280px;
+    max-width: 340px;
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
   }
 
   .cert-image-container {
@@ -392,6 +426,130 @@
   .cert-info {
     padding: 22px;
   }
+
+  .carousel-indicators {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-top: 28px;
+    padding: 0 10px;
+  }
+
+  .indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(124, 58, 237, 0.25);
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+  }
+
+  .indicator:hover {
+    background: rgba(124, 58, 237, 0.45);
+    transform: scale(1.15);
+  }
+
+  .indicator.active {
+    background: linear-gradient(
+      135deg,
+      var(--primary-color),
+      var(--secondary-color)
+    );
+    border-color: rgba(124, 58, 237, 0.3);
+    transform: scale(1.35);
+    box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.2);
+  }
+
+  [data-theme="dark"] .indicator {
+    background: rgba(167, 139, 250, 0.3);
+    border-color: rgba(167, 139, 250, 0.1);
+  }
+
+  [data-theme="dark"] .indicator:hover {
+    background: rgba(167, 139, 250, 0.5);
+  }
+
+  [data-theme="dark"] .indicator.active {
+    background: linear-gradient(
+      135deg,
+      #a78bfa,
+      #06b6d4
+    );
+    border-color: rgba(167, 139, 250, 0.6);
+    box-shadow: 0 0 0 4px rgba(167, 139, 250, 0.3);
+  }
+
+  .certifications-container {
+    position: relative;
+  }
+
+  .carousel-nav-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 35%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(
+      135deg,
+      var(--primary-color),
+      var(--secondary-color)
+    );
+    border: none;
+    color: white;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
+    transition: all 0.3s ease;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .carousel-nav-button.visible {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .carousel-nav-button:hover {
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 6px 16px rgba(124, 58, 237, 0.4);
+  }
+
+  .carousel-nav-button:active {
+    transform: translateY(-50%) scale(0.95);
+  }
+
+  .carousel-nav-button svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .carousel-nav-prev {
+    left: -5px;
+  }
+
+  .carousel-nav-next {
+    right: -5px;
+  }
+
+  [data-theme="dark"] .carousel-nav-button {
+    background: linear-gradient(
+      135deg,
+      #a78bfa,
+      #06b6d4
+    );
+    box-shadow: 0 4px 12px rgba(167, 139, 250, 0.4);
+  }
+
+  [data-theme="dark"] .carousel-nav-button:hover {
+    box-shadow: 0 6px 16px rgba(167, 139, 250, 0.5);
+  }
 }
 
 @media (max-width: 480px) {
@@ -401,6 +559,17 @@
 
   .section-title {
     font-size: 2rem;
+  }
+
+  .certifications-grid {
+    gap: 16px;
+    padding: 12px 5px 22px;
+  }
+
+  .certifications-grid .cert-card {
+    flex: 0 0 90%;
+    min-width: 260px;
+    max-width: 310px;
   }
 
   .cert-image-container {
@@ -428,5 +597,29 @@
 
   .cert-content p {
     font-size: 0.9rem;
+  }
+
+  .carousel-indicators {
+    margin-top: 22px;
+    gap: 10px;
+  }
+
+  .indicator {
+    width: 9px;
+    height: 9px;
+  }
+
+  .indicator.active {
+    transform: scale(1.25);
+  }
+
+  .carousel-nav-button {
+    width: 36px;
+    height: 36px;
+  }
+
+  .carousel-nav-button svg {
+    width: 18px;
+    height: 18px;
   }
 }

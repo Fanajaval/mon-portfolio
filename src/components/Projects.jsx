@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { projects } from "../data/projects";
 import ProjectCard from "./ProjectCard";
 import "../styles/Projects.css";
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect, useCallback } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
 
 function Projects() {
@@ -33,6 +33,7 @@ function Projects() {
       const containerWidth = container.offsetWidth;
       
       let newIndex = 0;
+      let minDistance = Infinity;
       const items = container.children;
       
       for (let i = 0; i < items.length; i++) {
@@ -42,9 +43,11 @@ function Projects() {
         const itemCenter = itemLeft + itemWidth / 2;
         const viewCenter = scrollLeft + containerWidth / 2;
         
-        if (Math.abs(itemCenter - viewCenter) < itemWidth / 2) {
+        const distance = Math.abs(itemCenter - viewCenter);
+        
+        if (distance < minDistance) {
+          minDistance = distance;
           newIndex = i;
-          break;
         }
       }
       
@@ -89,13 +92,16 @@ function Projects() {
     const handleDesktopScroll = () => handleScroll(desktopScrollRef, setDesktopActiveIndex, desktopProjects.length, 'desktop');
 
     if (mobileRef) {
-      mobileRef.addEventListener('scroll', handleMobileScroll);
+      mobileRef.addEventListener('scroll', handleMobileScroll, { passive: true });
+      handleMobileScroll();
     }
     if (webRef) {
-      webRef.addEventListener('scroll', handleWebScroll);
+      webRef.addEventListener('scroll', handleWebScroll, { passive: true });
+      handleWebScroll();
     }
     if (desktopRef) {
-      desktopRef.addEventListener('scroll', handleDesktopScroll);
+      desktopRef.addEventListener('scroll', handleDesktopScroll, { passive: true });
+      handleDesktopScroll();
     }
 
     return () => {
@@ -109,7 +115,7 @@ function Projects() {
         desktopRef.removeEventListener('scroll', handleDesktopScroll);
       }
     };
-  }, [mobileProjects.length, webProjects.length, desktopProjects.length]);
+  }, []);
 
   return (
     <section className="projects" id="projects">
