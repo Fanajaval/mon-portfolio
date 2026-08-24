@@ -143,8 +143,8 @@ export const projects = [
     },
 
     {
-      title: "Gestion de stock et vente",
-      description: "Application desktop de gestion de stock et suivi des ventes avec génération de rapports.",
+      title: "Application desktop de gestion de stock et suivi des ventes",
+      description: "Gestion des produits et des mouvements de stock, avec alertes de stock faible ou épuisé, suivi de l’historique des opérations et génération de rapports PDF sur les coûts, les ventes et les bénéfices.",
       technologies: ["Python", "Tkinter", "SQLite"],
       category: "Desktop",
       github: "private",
@@ -153,8 +153,8 @@ export const projects = [
     },
 
     {
-      title: "Gestion d'émigration des étrangers",
-      description: "Application desktop de gestion administrative de l'émigration et suivi des dossiers.",
+      title: "Application desktop de gestion de l’émigration des étrangers",
+      description: "Gestion des dossiers des étrangers, des passeports, visas et autorisations d’emploi, avec alertes sur les visas proches de l’expiration ou déjà expirés, et génération PDF de documents administratifs.",
       technologies: ["Python", "Tkinter", "SQLite"],
       category: "Desktop",
       github: "private",
