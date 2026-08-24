@@ -10,9 +10,9 @@ import "../styles/Navbar.css";
 const navItems = [
   { id: "hero", label: "Accueil" },
   { id: "about", label: "À propos" },
+  { id: "parcours", label: "Parcours" },
   { id: "skills", label: "Compétences" },
   { id: "projects", label: "Projets" },
-  { id: "parcours", label: "Parcours" },
   { id: "certifications", label: "Certifications" },
   { id: "contact", label: "Contact" },
 ];
