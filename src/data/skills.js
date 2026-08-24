@@ -24,6 +24,7 @@ import {
   SiNextdotjs,
   SiSpring,
   SiHibernate,
+  SiFlutter,
 } from "react-icons/si";
 
 import { TbBolt } from "react-icons/tb";
@@ -95,6 +96,11 @@ export const skills = {
       name: "React Native",
       icon: FaReact,
       color: "#61DAFB",
+    },
+    {
+      name: "Flutter",
+      icon: SiFlutter,
+      color: "#02569B"
     },
   ],
 
