@@ -9,7 +9,7 @@ export const parcoursData = [
     year: "Octobre 2025 - Août 2026",
     type: "experience",
     title: "Stage",
-    organization: "Radio Tsiry",
+    organization: "Radio Tsiry Fianarantsoa",
     projects: [
       "Application desktop de gestion de stock et de vente",
       "Application mobile de billetterie événementielle",
