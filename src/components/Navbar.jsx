@@ -60,7 +60,7 @@ function Navbar({ theme, toggleTheme }) {
       <nav className="navbar">
 
         <a href="#hero" className="logo">
-          FV
+          <span>&lt;</span>FV<span>/&gt;</span>
         </a>
 
 

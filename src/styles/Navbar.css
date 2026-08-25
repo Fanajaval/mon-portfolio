@@ -31,7 +31,7 @@
 }
 
 .logo {
-  font-size: 1.8rem;
+  font-size: 1.4rem;
   font-weight: 800;
   color: var(--primary-color);
   letter-spacing: 1px;
@@ -44,6 +44,10 @@
 .logo:hover {
   transform: scale(1.05);
   color: var(--primary-color);
+}
+
+.logo span {
+  color: var(--text-color);
 }
 
 .nav-links {
