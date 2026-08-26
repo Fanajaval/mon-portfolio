@@ -95,7 +95,7 @@ function Hero() {
 
 
           <motion.a
-            href="/cv.pdf"
+            href="/CV_Fanaja_Valério.pdf"
             className="btn-secondary"
             download
             whileHover={{

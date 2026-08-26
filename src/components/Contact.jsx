@@ -195,7 +195,7 @@ function Contact() {
         }}
       >
         <a
-          href="/cv.pdf"
+          href="/CV_Fanaja_Valério.pdf"
           download
           className="cv-button"
         >
