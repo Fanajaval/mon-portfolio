@@ -10,11 +10,13 @@ import {
   FaGitAlt,
   FaGithub,
   FaDocker,
+  FaFigma,
 } from "react-icons/fa6";
 
 import {
   SiExpress,
   SiFlask,
+  SiFigma,
   SiMysql,
   SiSqlite,
   SiPostgresql,
@@ -148,6 +150,11 @@ export const skills = {
       icon: TbBolt,
       color: "#FF6C37",
     },
+    {
+      name: "Figma",
+      icon: SiFigma,
+      color: "#F24E1E",
+    }
   ],
   learning: [
     {
